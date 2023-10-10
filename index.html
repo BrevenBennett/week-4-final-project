@@ -1,15 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="index.js" defer></script>
-</head>
-<body>
-    <div>
-        test
+    <script
+      src="https://kit.fontawesome.com/a78d91bcb9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="landing">
+      <nav>
+        <div class="logo__wrapper">
+          <figure class="logo__img--wrapper">
+            <i class="fa-solid fa-film"></i>
+          </figure>
+          <h2 class="logo__text">Movie Madness</h2>
+        </div>
+        <ul class="nav__link--list">
+          <li class="nav__link">
+            <a href="#" class="nav__link--anchor">Home</a>
+          </li>
+          <li class="nav__link">
+            <a href="#" class="nav__link--anchor">Find Your Movie</a>
+          </li>
+          <li class="nav__link">
+            <a href="#" class="nav__link--anchor nav__link--anchor-primary"
+              >Sign In</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <header>
+        <div class="header__description">
+          <h1 class="header__title">
+            The Best Movie Platorm in the U.S.
+          </h1>
+          <h3 class="header__subtitle">
+            GRAB YOUR POPCORN AND FIND YOUR FAVORITE FLICK
+          </h3>
+          <form action="">
+            <input type="text" placeholder="Search by year or keyword" />
+            <div class="header__btn--wrapper">
+              <button class="header__btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+        <figure class="header__img--wrapper">
+          <img class="header__img" src="assets/movie.svg" alt="" />
+        </figure>
+      </header>
     </div>
-</body>
+  </body>
 </html>

@@ -1,13 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="movie.js" defer></script>
-</head>
-<body>
-    
-</body>
+    <script
+      src="https://kit.fontawesome.com/a78d91bcb9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="nav__movie">
+      <div class="nav__movie--main">
+        <div class="logo__wrapper">
+          <figure class="logo__img--wrapper">
+            <i class="fa-solid fa-film"></i>
+          </figure>
+          <h2 class="logo__text">Movie Madness</h2>
+        </div>
+        <ul class="nav__link--list">
+          <li class="nav__link">
+            <a href="#" class="nav__link--anchor">Home</a>
+          </li>
+          <li class="nav__link">
+            <a href="#" class="nav__link--anchor">Find Your Movie</a>
+          </li>
+          <li class="nav__link">
+            <a href="#" class="nav__link--anchor nav__link--anchor-primary"
+              >Sign In</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="nav__movie--secondary">
+        <h1 class="nav__title">Browse Our Movies</h1>
+        <form action="">
+          <input type="text" placeholder="Search by year or keyword" />
+          <div class="header__btn--wrapper">
+            <button class="header__btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </nav>
+    <header class="header">
+      <div class="header__movie">
+        <h3 class="header__movie--search">Search Results for:</h3>
+        <h5 class="header__movie--year">Year Range:</h5>
+      </div>
+      <div class="movie-list">
+        <div class="movie">
+          <figure class="movie__img--wrapper">
+            <img src="" alt="" class="movie__img" />
+          </figure>
+          <h4 class="movie__title"></h4>
+          <h4 class="movie__year"></h4>
+        </div>
+      </div>
+    </header>
+  </body>
 </html>

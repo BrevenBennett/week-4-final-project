@@ -1,3 +1,176 @@
 * {
-    color: red;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* 
+
+LANDING 
+
+*/
+
+nav {
+  height: 80px;
+  background-color: #242424;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.logo__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.fa-film {
+  color: red;
+  font-size: 24px;
+}
+
+.logo__text {
+  color: red;
+  margin-left: 12px;
+}
+
+.nav__link--list {
+  display: flex;
+}
+
+.nav__link {
+  padding-left: 18px;
+}
+
+.nav__link--anchor {
+  color: red;
+}
+
+.nav__link--anchor-primary {
+  padding: 4px 12px;
+  color: white;
+  background-color: red;
+  border-radius: 12px;
+}
+
+header {
+  margin: 0 auto;
+  padding: 0 24px;
+  height: calc(100vh - 80px);
+}
+
+.header__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 0;
+}
+
+.header__subtitle {
+  margin: 24px 0;
+}
+
+form {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  padding: 10px 56px 10px 12px;
+  border-radius: 9999px;
+  border: 1px solid black;
+}
+
+input::placeholder {
+  margin-right: -24px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.header__btn--wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.header__btn {
+  position: absolute;
+  margin-right: 12px;
+  border: none;
+  background-color: transparent;
+}
+
+.fa-magnifying-glass:hover {
+  color: red;
+}
+
+.header__img--wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.header__img {
+  max-width: 400px;
+}
+
+/***
+
+MOVIE.HTML
+
+***/
+
+.nav__movie {
+  padding: 24px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__movie--main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__movie--secondary {
+  padding: 12px 0;
+}
+
+.nav__title {
+  color: red;
+  margin-bottom: 12px;
+}
+
+.header {
+  padding: 24px;
+  height: calc(100vh - 200px);
+}
+
+.header__movie {
+  display: flex;
+  justify-content: space-between;
 }
