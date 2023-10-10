@@ -36,7 +36,7 @@
       </div>
       <div class="nav__movie--secondary">
         <h1 class="nav__title">Browse Our Movies</h1>
-        <form action="">
+        <form action="" id="form">
           <input type="text" placeholder="Search by year or keyword" />
           <div class="header__btn--wrapper">
             <button class="header__btn">
@@ -49,9 +49,17 @@
     <header class="header">
       <div class="header__movie">
         <h3 class="header__movie--search">Search Results for:</h3>
-        <h5 class="header__movie--year">Year Range:</h5>
+        <div class="filter__wrapper">
+          <h5 class="header__movie--year">Year Range:</h5>
+          <select class="year__select" id="">
+            <option value="" selected disabled>Filter</option>
+            <option value="2010+">2010+</option>
+            <option value="2000-2009">2000-2009</option>
+            <option value="Pre-2000">Pre-2000</option>
+          </select>
+        </div>
       </div>
-      <div class="movie-list">
+      <div class="movie-list movie__loading">
         <div class="movie">
           <figure class="movie__img--wrapper">
             <img src="" alt="" class="movie__img" />

@@ -174,3 +174,14 @@ MOVIE.HTML
   display: flex;
   justify-content: space-between;
 }
+
+.filter__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.year__select {
+  margin-top: 6px;
+}
