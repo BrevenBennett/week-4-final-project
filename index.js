@@ -1,10 +1,15 @@
-function showMovies(title) {
-  localStorage.setItem("title", title);
+function showMovies(id) {
+  localStorage.setItem("id", id);
   window.location.href = `${window.location.origin}/movie.html`;
 }
 
-function searchHTML(title) {
-  return `<button class="header__btn" onclick="showMovies(${title})">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>`;
+function searchHTML(movie) {
+  return `<form action="" id="form" onsubmit="${showMovies(movie)}">
+  <input type="text" placeholder="Find your movie!" />
+  <div class="header__btn--wrapper">
+    <button class="header__btn">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </div>
+</form>`;
 }

@@ -14,21 +14,21 @@
   <body>
     <div id="landing">
       <nav>
-        <div class="logo__wrapper">
+        <a href="#" class="logo__wrapper">
           <figure class="logo__img--wrapper">
             <i class="fa-solid fa-film"></i>
           </figure>
           <h2 class="logo__text">Movie Madness</h2>
-        </div>
+        </a>
         <ul class="nav__link--list">
           <li class="nav__link">
             <a href="#" class="nav__link--anchor">Home</a>
           </li>
           <li class="nav__link">
-            <a href="#" class="nav__link--anchor">Find Your Movie</a>
+            <a href="./movie.html" class="nav__link--anchor">Find Your Movie</a>
           </li>
           <li class="nav__link">
-            <a href="#" class="nav__link--anchor nav__link--anchor-primary"
+            <a href="#" class="nav__link--anchor nav__link--anchor-primary no-cursor"
               >Sign In</a
             >
           </li>
@@ -43,8 +43,8 @@
           <h3 class="header__subtitle">
             GRAB YOUR POPCORN AND FIND YOUR FAVORITE FLICK
           </h3>
-          <form action="" id="form">
-            <input type="text" placeholder="Find your movie!" />
+          <form action="" id="form" onsubmit="showMovies(); return false">
+            <input type="text" placeholder="Find your movie!" onchange="onSearchChange(event)" />
             <div class="header__btn--wrapper">
               <button class="header__btn">
                 <i class="fa-solid fa-magnifying-glass"></i>
