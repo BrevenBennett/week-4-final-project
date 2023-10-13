@@ -171,7 +171,6 @@ header {
   margin: 0 auto;
   padding: 0 24px;
   height: calc(100vh - 80px);
-  position: relative;
 }
 
 .header__description {
@@ -274,6 +273,7 @@ MOVIE.HTML
 
 .header {
   padding: 24px;
+  position: relative;
 }
 
 .header__movie {

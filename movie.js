@@ -8,7 +8,7 @@ async function renderMovies(filter) {
   searchPerformed = true;
 
   const movies = await fetch(
-    `http://www.omdbapi.com/?apikey=53de5b3d&s=${title}`
+    `https://www.omdbapi.com/?apikey=53de5b3d&s=${title}`
   );
 
   moviesData = await movies.json();
