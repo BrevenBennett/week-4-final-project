@@ -1,17 +1,21 @@
 const moviesListEl = document.querySelector(".movie-list");
 const searchTitleEl = document.querySelector(".header__movie--search");
 
+let title = "";
+let searchPerformed = false;
+
 async function renderMovies(filter) {
-  searchTitleEl.innerHTML += ` ${title}`;
+  searchPerformed = true;
+
   const movies = await fetch(
     `http://www.omdbapi.com/?apikey=53de5b3d&s=${title}`
   );
 
-  const moviesData = await movies.json();
+  moviesData = await movies.json();
 
   const moviesArray = moviesData.Search;
 
- if (filter === "Oldest_To_Newest") {
+  if (filter === "Oldest_To_Newest") {
     moviesArray.sort((a, b) => a.Year - b.Year);
   } else if (filter === "Newest_To_Oldest") {
     moviesArray.sort((a, b) => b.Year - a.Year);
@@ -21,17 +25,41 @@ async function renderMovies(filter) {
     .map((movie) => movieHTML(movie))
     .slice(0, 6)
     .join("");
-}
 
-function filterYear(event) {
-  console.log(event.target.value)
-  renderMovies(event.target.value);
+  searchTitleEl.innerHTML = `Search Results For: ${title}`;
 }
 
 function onSearchChange(event) {
-  title = event.target.value;
   event.preventDefault();
-  renderMovies();
+  const loading = document.querySelector(".fa-spinner");
+  const searchInputEl = document.getElementById("search");
+  title = searchInputEl.value;
+
+  if (searchPerformed) {
+    moviesListEl.classList += " movie-list--hidden";
+    setTimeout(() => {
+      loading.classList += " spinner--visible";
+    }, 400);
+  }
+  else {
+    loading.classList += " spinner--visible";
+  }
+
+  setTimeout(() => {
+    renderMovies(title)
+      .then(() => {
+        moviesListEl.classList.remove("movie-list--hidden");
+        loading.classList.remove("spinner--visible");
+      })
+      .catch(() => {
+        loading.classList.remove("spinner--visible");
+        alert("No movies found. Try searching again.");
+      });
+  }, 1200);
+}
+
+function filterYear(event) {
+  renderMovies(event.target.value);
 }
 
 function movieHTML(movie) {
@@ -44,14 +72,10 @@ function movieHTML(movie) {
     </div>`;
 }
 
-// function sortMovieYear(event) {
-//   renderMovies(event.target.value);
-// }
+function openMenu() {
+  document.body.classList += " menu--open";
+}
 
-// function openMenu() {
-//   document.body.classList += " menu--open";
-// }
-
-// function closeMenu() {
-//   document.body.classList.remove("menu--open");
-// }
+function closeMenu() {
+  document.body.classList.remove("menu--open");
+}

@@ -28,18 +28,51 @@
             <a href="#" class="nav__link--anchor">Find Your Movie</a>
           </li>
           <li class="nav__link">
-            <a href="#" class="nav__link--anchor nav__link--anchor-primary no-cursor"
+            <a
+              href="#"
+              class="nav__link--anchor nav__link--anchor-primary no-cursor"
               >Sign In</a
             >
           </li>
         </ul>
+        <button class="btn__menu" onclick="openMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="menu__backdrop">
+          <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+            <i class="fas fa-times"></i>
+          </button>
+          <ul class="menu__links">
+            <li class="menu__list">
+              <a
+                href="#"
+                class="menu__link link__hover-effect"
+                onclick="closeMenu()"
+                >Home</a
+              >
+            </li>
+            <li class="menu__list">
+              <a
+                href="movie.html"
+                class="menu__link link__hover-effect"
+                onclick="closeMenu()"
+                >Find Your Movie</a
+              >
+            </li>
+            <li class="menu__list menu__list--primary">
+              <a class="menu__link nav__link--primary" onclick="closeMenu()"
+                >Sign In</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="nav__movie--secondary">
         <h1 class="nav__title">Browse Our Movies</h1>
-        <form action="" id="form">
-          <input type="text" placeholder="Find your movie" onchange="onSearchChange(event)"/>
+        <form action="" id="form" onsubmit="onSearchChange(event)">
+          <input type="text" placeholder="Find your movie" id="search" />
           <div class="header__btn--wrapper">
-            <button class="header__btn" onclick="onSearchChange(event)">
+            <button class="header__btn">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
           </div>
@@ -48,7 +81,7 @@
     </nav>
     <header class="header">
       <div class="header__movie">
-        <h3 class="header__movie--search">Search Results for:</h3>
+        <h3 class="header__movie--search">Search Results For:</h3>
         <div class="filter__wrapper">
           <h3 class="header__movie--year">Year Range:</h3>
           <select id="filter" onchange="filterYear(event)">
@@ -58,11 +91,8 @@
           </select>
         </div>
       </div>
-      <!-- <div class="movie__loading">
-        <i class="fas fa-spinner movie__loading--spinner"></i>
-      </div> -->
-      <div class="movie-list">
-      </div>
+      <div class="movie-list"></div>
+      <i class="fas fa-spinner"></i>
     </header>
   </body>
 </html>

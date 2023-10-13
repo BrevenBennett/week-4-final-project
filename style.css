@@ -24,6 +24,100 @@ button {
   cursor: no-drop;
 }
 
+.red {
+  color: red;
+}
+
+.btn__menu {
+  background-color: transparent;
+  border: none;
+  font-size: 32px;
+  text-align: center;
+  color: red;
+  display: none;
+}
+
+.menu__backdrop {
+  position: absolute;
+  background-color: red;
+  top: 3%;
+  left: 2%;
+  bottom: 40%;
+  right: 2%;
+  border: 1px solid #a0aec08c;
+  border-radius: 10px;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 300ms ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu--open .menu__backdrop {
+  visibility: visible;
+  opacity: 1;
+  animation: slide-in 400ms 100ms backwards;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(110%);
+  }
+
+  33% {
+    transform: translateX(-10%);
+  }
+
+  67% {
+    transform: translateX(10%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.menu--open {
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
+.menu__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu__list {
+  padding: 8px 0;
+}
+
+.menu__link {
+  font-size: 18px;
+  color: #1a202c;
+  font-weight: 600;
+}
+
+.menu__link:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.btn__menu--close {
+  position: absolute;
+  right: 10px;
+  top: -2px;
+  padding: 8px;
+  color: black;
+}
+
+.btn__menu--close:hover,
+.btn__menu:hover {
+  color: white;
+}
+
 /* 
 
 LANDING 
@@ -77,6 +171,7 @@ header {
   margin: 0 auto;
   padding: 0 24px;
   height: calc(100vh - 80px);
+  position: relative;
 }
 
 .header__description {
@@ -84,11 +179,19 @@ header {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 32px 0;
+  padding: 32px 0 16px 0;
 }
 
 .header__subtitle {
-  margin: 24px 0;
+  margin: 24px 0 12px 0;
+  width: 100%;
+  max-width: 300px;
+  transition: all 300ms ease;
+}
+
+.header__subtitle:hover {
+  filter: brightness(1.1);
+  transform: scale(1.1);
 }
 
 form {
@@ -192,6 +295,11 @@ MOVIE.HTML
 .movie-list {
   display: flex;
   flex-wrap: wrap;
+  visibility: visible;
+}
+
+.movie-list--hidden {
+  visibility: hidden;
 }
 
 .movie {
@@ -220,4 +328,39 @@ MOVIE.HTML
 
 .movie__title {
   text-align: center;
+}
+
+.fa-spinner {
+  animation: rotate 600ms infinite linear; 
+  top: 50%;
+  left: 45%;
+  color: red;
+  font-size: 120px;
+  position: absolute;
+  visibility: hidden;
+}
+
+.spinner--visible {
+  visibility: visible;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (max-width: 600px) {
+  .btn__menu {
+    display: block;
+  }
+
+  .nav__link {
+    display: none;
+  }
 }
