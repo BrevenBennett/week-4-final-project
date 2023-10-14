@@ -185,10 +185,13 @@ header {
   margin: 24px 0 12px 0;
   width: 100%;
   max-width: 300px;
+}
+
+.header__subtitle--anchor {
   transition: all 300ms ease;
 }
 
-.header__subtitle:hover {
+.header__subtitle--anchor:hover {
   filter: brightness(1.1);
   transform: scale(1.1);
 }
@@ -307,7 +310,7 @@ MOVIE.HTML
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 12px;
+  padding: 24px;
   transition: all 300ms ease;
 }
 
@@ -331,7 +334,7 @@ MOVIE.HTML
 }
 
 .fa-spinner {
-  animation: rotate 600ms infinite linear; 
+  animation: rotate 600ms infinite linear;
   top: 50%;
   left: 45%;
   color: red;
@@ -353,7 +356,6 @@ MOVIE.HTML
     transform: rotate(360deg);
   }
 }
-
 
 @media (max-width: 600px) {
   .btn__menu {
