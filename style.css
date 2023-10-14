@@ -181,10 +181,15 @@ header {
   padding: 32px 0 16px 0;
 }
 
+.header__title {
+  font-size: 48px;
+}
+
 .header__subtitle {
   margin: 24px 0 12px 0;
   width: 100%;
-  max-width: 300px;
+  max-width: 500px;
+  font-size: 32px;
 }
 
 .header__subtitle--anchor {
@@ -242,7 +247,7 @@ input:focus {
 }
 
 .header__img {
-  max-width: 400px;
+  max-width: 500px;
 }
 
 /***
@@ -336,7 +341,7 @@ MOVIE.HTML
 .fa-spinner {
   animation: rotate 600ms infinite linear;
   top: 50%;
-  left: 45%;
+  left: 39%;
   color: red;
   font-size: 120px;
   position: absolute;
@@ -364,5 +369,11 @@ MOVIE.HTML
 
   .nav__link {
     display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .header__img {
+    max-width: 300px;
   }
 }
