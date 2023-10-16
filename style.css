@@ -304,6 +304,8 @@ MOVIE.HTML
   display: flex;
   flex-wrap: wrap;
   visibility: visible;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .movie-list--hidden {
@@ -366,6 +368,12 @@ MOVIE.HTML
   }
 }
 
+@media (max-width: 768px) {
+  .movie {
+    width: 50%;
+  }
+}
+
 @media (max-width: 600px) {
   .btn__menu {
     display: block;
@@ -379,5 +387,9 @@ MOVIE.HTML
 @media (max-width: 500px) {
   .header__img {
     max-width: 300px;
+  }
+
+  .movie {
+    width: 100%;
   }
 }

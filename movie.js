@@ -40,8 +40,7 @@ function onSearchChange(event) {
     setTimeout(() => {
       loading.classList += " spinner--visible";
     }, 400);
-  }
-  else {
+  } else {
     loading.classList += " spinner--visible";
   }
 
